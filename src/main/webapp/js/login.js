@@ -2,8 +2,6 @@ $(document).ready(function (){
     $("#loginForm").submit(function(e){
         e.preventDefault()
 
-        console.log("asd")
-
         let isValid = true
 
         $(".error").remove()
@@ -33,6 +31,7 @@ $(document).ready(function (){
                     if(res.success){
                         window.location.href = "../index.jsp"
                     }else{
+                        $(".error").remove()
                         $("#loginForm").prepend("<div class='error alert alert-danger'>" + res.message + "</div>")
                     }
                 },
